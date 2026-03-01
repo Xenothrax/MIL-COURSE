@@ -1,0 +1,132 @@
+nav{
+    width: 100%;
+    padding: 12px 0;
+    background: gray;
+    box-shadow: rgb(82, 72, 72);
+}
+
+nav .menu{
+    max-width: 1270px;
+    margin: auto;
+    padding:0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu .logo a{
+    font-size: 29px;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(34, 33, 33);
+}
+
+.menu ul{
+    list-style: none;
+    display: flex;
+}
+
+.menu ul a{
+    margin: 0 8px;
+    text-decoration: none;
+    font-size: 19px;
+    color: rgb(28, 27, 26);
+    font-weight: 400;
+    display: inline-block;
+    padding: 10px 12px;
+    box-shadow: -3px -3px 7px rgb(78, 81, 82), 3px 3px 5px ;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.menu ul a:hover::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.menu ul a:hover{
+    color: aqua;
+}
+
+nav label.btn{
+    color:black;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+}
+
+nav label.cancel{
+    position: absolute;
+    top: 25px;
+    right:30;
+}
+
+#check{
+    display: none;
+}
+
+.fa-solid .fa-house{
+    margin-right: 10px;
+}
+
+h1 {text-align: center;}
+button {font-size: 30px;}
+
+h4{
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    border: 12px, black;
+    background-color: white;
+    text-align: center;
+}
+
+@media (max-width:940px){
+    .menu ul{
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        min-width: 400px;
+        padding-top: 45px;
+        height: 100%;
+        background: whitesmoke;
+        box-shadow: none;
+        z-index: 12;
+        transition: all 0.3s ease;
+    }
+
+    .menu ul a{
+         display: block;
+         font-size: 23px;
+         width: 100%;
+         margin-top: 30px;
+         box-shadow: none;
+         text-align: center;
+    }
+
+    .menu ul a:hover::before{
+        box-shadow: none;
+    }
+
+    nav label.bars{
+        display: block;
+    }
+
+    #check:checked~label.bars{
+        display: none;
+    }
+
+
+    #check:checked~ul label.cancel{
+        display: block;
+    }
+
+    #check:checked~ul{
+        left: 0;
+    }
+}
